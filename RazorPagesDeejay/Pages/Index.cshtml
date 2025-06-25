@@ -5,7 +5,10 @@
 	ViewData["Title"] = "Home page";
 }
 
-<div class="container d-flex align-items-center justify-content-center" style="min-height: 80vh">
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 10vh">
+	<p class="text-center">Not sure what to listen to? Here's an idea:</p>
+</div>
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 40vh">
 	<div class="row justify-content-center">
 		@foreach (Album album in Model.Albums)
 		{
