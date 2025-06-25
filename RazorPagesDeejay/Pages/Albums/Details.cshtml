@@ -29,6 +29,18 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Album.CoverArtUrl)
         </dd>
+        <dt class="col-sm-2">
+            AlbumCardPreview
+        </dt>
+        <dd class="col-sm-10">
+            <div class="card px-1 py-1 mx-4 my-4" style="width: 18rem;">
+                <img src="@Model.Album.CoverArtUrl" class="card-img-top" alt="@Model.Album.Name cover art">
+                <div class="card-body">
+                    <h5 class="card-title d-flex justify-content-center">@Model.Album.Name</h5>
+                    <p class="card-text d-flex justify-content-center">@Model.Album.Artist</p>
+                </div>
+            </div>
+        </dd>
     </dl>
 </div>
 <div>
