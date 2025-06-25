@@ -2,15 +2,25 @@
 @using RazorPagesDeejay.Models
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+	ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row justify-content-center">
+	@foreach (Album album in Model.Albums)
+	{
+		<div class="card px-1 py-1 mx-4 my-4" style="width: 18rem;">
+			<img src="@album.CoverArtUrl" class="card-img-top" alt="@album.Name cover art">
+			<div class="card-body">
+				<h5 class="card-title d-flex justify-content-center">@album.Name</h5>
+				<p class="card-text d-flex justify-content-center">@album.Artist</p>
+			</div>
+		</div>
+	}
+	<div class="card px-1 py-1 mx-4 my-4" style="width: 18rem;">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Calvin_Harris_2011_%287395509804%29_%28cropped%29.jpg"
+			 class="card-img-top" alt="Deejay image">
+		<div class="card-body d-flex justify-content-center">
+			<a asp-page="" class="btn btn-success">Got anything else?</a>
+		</div>
+	</div>
 </div>
-
-@foreach (Album album in Model.Albums)
-{
-    <p>@album.Name</p>
-}

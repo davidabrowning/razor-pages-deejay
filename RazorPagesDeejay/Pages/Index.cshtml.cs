@@ -20,7 +20,10 @@ namespace RazorPagesDeejay.Pages
 
         public void OnGet()
         {
-            Albums = _applicationDbContext.Albums;
+            Albums = _applicationDbContext.Albums
+                .OrderBy(a => Guid.NewGuid())
+                .Take(1)
+                .ToList();
         }
     }
 }
